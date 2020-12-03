@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Router } from "@reach/router";
+//import Nav from "./Components/NavBar";
+import HomePage from "./Components/Home";
+import Blocks from "./Components/Blocks";
 
 function App() {
   return (
+    // is div needed now?
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <HomePage path="/" />
+        <Blocks path="/blocks" />
+      </Router>
     </div>
   );
 }
