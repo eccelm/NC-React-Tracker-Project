@@ -10,6 +10,7 @@ User story breakdown:
 
 **List of Students Page**
 
+- As an admin, I want to clearly see how many students are on the course so that I can plan accordingly.
 - As an admin, I want to be able to view a list of the students currently on the course.
 - As an admin, I want to see which block each student is in so that I know where they are in the course.
 
@@ -38,7 +39,6 @@ User story breakdown:
 Using stats at top and general list of blocks below
 
 - As an admin, I want to clearly see how many students are on each block so that I can plan accordingly.
-- As an admin, I want to clearly see how many students are on the course so that I can plan accordingly.
 
 - As an admin, I want to see how many pathways through the course there have been so that we can communicate that to relevant stakeholders.
 <!-- ? -->

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BlockCard from "./BlockCard";
+import Nav from "./NavBar";
 
 class Blocks extends Component {
   state = {
@@ -13,7 +14,6 @@ class Blocks extends Component {
     console.log("mounted");
     this.fetchBlocks().then((blocks) => {
       this.setState({ blocks, isLoading: false });
-      console.log(this.state, "hopefully I've updated");
     });
   }
 
@@ -35,12 +35,17 @@ class Blocks extends Component {
     }
     return (
       <div>
-        <p>Hello Blocks Page</p>
+        <Nav />
+        <p>
+          - As an admin, I want to clearly see how many students are on each
+          block so that I can plan accordingly, and on the course overall
+        </p>
         <ul>
           {blocks.map((block) => {
             return <BlockCard key={block["_id"]} {...block} />;
           })}
         </ul>
+        <p>Hello Blocks Page</p>
       </div>
     );
   }

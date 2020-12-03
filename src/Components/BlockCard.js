@@ -8,11 +8,12 @@ CSS comments
 const BlockCard = (props) => {
   console.log("inside the Block card");
   console.log(props);
-  const { _id, number, name, slug, __v } = props;
-
+  const { name, slug } = props;
+  //numbrer  id and v could also be used taken out to clear up console
   return (
     <li className="block-card">
       <h2>{name}</h2>
+      <p>{slug}</p>
     </li>
   );
 };
