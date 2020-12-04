@@ -3,13 +3,13 @@ import { Link } from "@reach/router";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="homepage-wrapper">
       <h1>Welcome to Northcoders Student Tracker</h1>
       <Link to="/students">
-        <button>Students</button>
+        <button className="homepage-button">Students</button>
       </Link>
       <Link to="/blocks">
-        <button>Blocks</button>
+        <button className="homepage-button">Blocks</button>
       </Link>
     </div>
   );

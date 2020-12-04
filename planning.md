@@ -18,11 +18,11 @@ User story breakdown:
 
 - As an admin, I want to see a list of graduates so I can feel good about my job.
 - As an admin, I want to be able to see a list of students from a specific block block.
-- As an admin, I want to add new students to the system so that I can begin tracking them.
 - As an admin, I want to see which cohort a student began the course on so that I can see how starting cohorts diverge.
 
-**Altering state**
+**Altering states**
 
+- As an admin, I want to add new students to the system so that I can begin tracking them.
 - As an admin, I want to be able to remove people from the course so that we can account for the occasional leaver.
 - As an admin, I want to graduate all relevant students from their respective blocks when it’s appropriate to do so.
 <!-- Filter students by block they are on, pass student-ids who are repeating, check if params for student-ids who are repeating is empty, if it is then iterate through all students in that block, change current block to new block, add new block to each students block history. If there is people there, filter students on block by required id into 2 arrays. Iterate through first array as above, the iterate through second array of repeating students, not changing current block but adding the repeated block to block history. -->

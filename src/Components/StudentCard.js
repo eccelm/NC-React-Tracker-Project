@@ -1,8 +1,8 @@
 import React from "react";
 
 const StudentCard = (props) => {
-  console.log("inside the Student card");
-  console.log(props);
+  //console.log("inside the Student card");
+  //console.log(props);
   const { _id, name, startingCohort, currentBlock } = props;
 
   return (
