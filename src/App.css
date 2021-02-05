@@ -54,6 +54,19 @@ button:hover {
   transition: 0.3s ease-in-out;
 }
 
+.student-stats {
+  border: 3px solid red;
+  margin: auto;
+  padding: 20px;
+  width:fit-content;
+}
+.student-card {
+  border: 3px solid paleturquoise;
+  padding: 20px;
+  width:fit-content;
+  text-decoration: none;
+  list-style: none;;
+}
 /*
 Would modules allow grouping of buttons ?
 

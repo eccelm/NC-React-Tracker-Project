@@ -8,7 +8,7 @@ const StudentCard = (props) => {
   return (
     <li className="student-card">
       <h2>
-        {name} ID: {_id}
+        {name}
       </h2>
       <p>Starting Cohort: {startingCohort}</p>
       <p>Current Block: {currentBlock}</p>
