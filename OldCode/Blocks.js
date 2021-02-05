@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BlockCard from "./BlockCard";
-import Nav from "./NavBar";
+import Nav from "../src/Components/NavBar";
 
 class Blocks extends Component {
   state = {

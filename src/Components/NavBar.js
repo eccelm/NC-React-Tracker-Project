@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 Ignore navbar for now figure out when doing other buttons 
 
 */
-const Nav = () => {
+const NavBar = () => {
   return (
     <div className="nav-div">
       <Link to="/">
@@ -13,11 +13,8 @@ const Nav = () => {
       <Link to="/students">
         <button>Students</button>
       </Link>
-      <Link to="/blocks">
-        <button>Blocks</button>
-      </Link>
     </div>
   );
 };
 
-export default Nav;
+export default NavBar;

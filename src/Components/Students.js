@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import StudentCard from "./StudentCard";
-import Nav from "./NavBar";
+import NavBar from "./NavBar";
 import StudentStats from "./StudentStats";
 
 class Students extends Component {
@@ -25,6 +25,29 @@ class Students extends Component {
         return response.data.students;
       });
   };
+
+  render() {
+    const { isLoading, students } = this.state;
+
+    if (isLoading) {
+      return <h2>Loading list of students ...</h2>;
+    }
+    return (
+      <div>
+        <NavBar />
+        <StudentStats props={students} />
+        <ul>
+          {students.map((student) => {
+            return <StudentCard key={student["_id"]} {...student} />;
+          })}
+        </ul>
+        <p>Hello Students Page </p>
+      </div>
+    );
+  }
+}
+
+export default Students;
 
   /*
   **List of Students Page**
@@ -50,25 +73,3 @@ function: count how many students in state array where
   /*
   Find in notes why the ... spread from the state need passing down in order for the props to not be empty? is this linked to the key and what it does?
 */
-  render() {
-    const { isLoading, students } = this.state;
-
-    if (isLoading) {
-      return <h2>Loading list of students ...</h2>;
-    }
-    return (
-      <div>
-        <Nav />
-        <StudentStats props={students} />
-        <ul>
-          {students.map((student) => {
-            return <StudentCard key={student["_id"]} {...student} />;
-          })}
-        </ul>
-        <p>Hello Students Page </p>
-      </div>
-    );
-  }
-}
-
-export default Students;
