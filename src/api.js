@@ -6,9 +6,12 @@ const trackerApi = axios.create({
 
 
 export async function fetchStudents(){
-   const students = await trackerApi
+   const response = await trackerApi
    .get("/students")
+   //console.log(students, Object.keys(students))
+   const {students} = response.data;
    console.log(students)
+   console.log("I'm second")
    return students;
 }
 
