@@ -1,8 +1,13 @@
 import axios from "axios";
 
+const trackerApi = axios.create({
+  baseURL: "https://nc-student-tracker.herokuapp.com/api",
+});
+
+
 export async function fetchStudents(){
-   const students = await axios
-   .get("https://nc-student-tracker.herokuapp.com/api/students")
+   const students = await trackerApi
+   .get("/students")
    console.log(students)
    return students;
 }
