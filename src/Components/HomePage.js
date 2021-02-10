@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import Header from "./Header";
+import Footer from "./Footer";
 const HomePage = () => {
   return (
     <div className="homepage-wrapper">
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Link to="/blocks">
         <button className="homepage-button">Blocks</button>
       </Link>
+      <Footer />
     </div>
   );
 };
