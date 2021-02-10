@@ -14,7 +14,6 @@ export async function fetchStudents(){
 export async function fetchBlocks(){
   const blocks = await axios
   .get("https://nc-student-tracker.herokuapp.com/api/blocks")
-  console.log(blocks)
   return blocks;
 }
 
@@ -23,3 +22,15 @@ export const getStudentById = async (id) => {
   const {student} = response.data;
   return student;
 };
+
+// post new student
+export const postNewStudent = async (newStudent) => {
+  const response = await trackerApi
+  .post(`/students`, newStudent)
+  console.log(response.data)
+  const {student} = response.data;
+  return student;
+};
+// patch graduate a student
+
+// delete a student

@@ -2,7 +2,7 @@ import React from "react";
 // props.props
 const StudentStats = (props) => {
   return (
-    <div className="student-stats">
+    <div className="student-stats" style={{border: `2px solid red`}}>
       <h2>STUDENT STATS</h2>
       <p>
        CURRENT STUDENTS:{" "}

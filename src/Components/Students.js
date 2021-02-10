@@ -3,6 +3,7 @@ import StudentCard from "./StudentCard";
 import Nav from "./NavBar";
 import StudentStats from "./StudentStats";
 import {fetchStudents} from "../api"
+import AddNewStudent from "./AddNewStudent"
 
 class Students extends Component {
   state = {
@@ -24,6 +25,7 @@ this.setState({ students, isLoading: false });
     return (
       <div>
         <Nav />
+        <AddNewStudent/>
         <StudentStats props={students} />
         <ul>
           {students.map((student) => {

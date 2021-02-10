@@ -2,7 +2,7 @@ import React from "react";
 
 const StudentCard = (props) => {
   console.log(props);
-  const { _id, name, startingCohort, currentBlock } = props;
+  const { name, startingCohort, currentBlock } = props;
 
   return (
     <li className="student-card">
