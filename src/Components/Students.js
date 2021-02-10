@@ -3,6 +3,7 @@ import axios from "axios";
 import StudentCard from "./StudentCard";
 import Nav from "./NavBar";
 import StudentStats from "./StudentStats";
+import {fetchStudents} from "../api"
 
 class Students extends Component {
   state = {
