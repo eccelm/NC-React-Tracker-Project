@@ -17,6 +17,9 @@ const StudentCard = (props) => {
       <button id="patch-student-btn" onClick={()=> {
         advanceStudent(_id, true)
       }}>Next Block</button>
+          <button id="patch-student-btn" onClick={()=> {
+        advanceStudent(_id, false)
+      }}>Repeat Block</button>
     </li>
   );
 };

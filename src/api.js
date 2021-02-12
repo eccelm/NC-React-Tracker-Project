@@ -46,4 +46,5 @@ export const patchStudentsProgress = async (studentId, progress) => {
   const response = await trackerApi
   .patch(`/students/${studentId}?progress=${progress}`)
   console.log(response, response.data, response.status, response.statusText)
+  return response.data.student
 }
