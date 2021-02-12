@@ -7,6 +7,7 @@ const StudentCard = (props) => {
   const { _id, name, startingCohort, currentBlock, removeStudent, advanceStudent } = props;
 
   return (
+    <>   
     <li className="student-card" style={{ border: `2px solid`, listStyleType: `none`, display:`flex`}}>
       <button id="delete-student-btn" onClick={()=> {removeStudent(_id)}}>X</button>
       <h2>
@@ -15,16 +16,22 @@ const StudentCard = (props) => {
       <p>{_id}</p>
       <p>Starting Cohort: {startingCohort}</p>
       <p>Current Block: {currentBlock}</p>
+
+      {
+      (currentBlock !== "grad") ? <>
       <button id="patch-student-btn" onClick={()=> {
         advanceStudent(_id, true)
       }}>Next Block</button>
           <button id="patch-student-btn" onClick={()=> {
         advanceStudent(_id, false)
-      }}>Repeat Block</button>
+      }}>Repeat Block</button> </>: null
+      }
+     
            <Link to="/">
         <button disabled>See more details??</button>
       </Link>
     </li>
+    </>
   );
 };
 

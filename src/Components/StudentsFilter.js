@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class StudentsFilter extends Component {
 
-	state = { graduated: '', block: '', cohort: '', sort_by: '', order: '' };
+	state = { graduated: '', block: '', cohort: '', sort_by: 'startingCohort', order: '' };
 
 
   componentDidUpdate(prevProps, prevState) {
@@ -59,9 +59,9 @@ class StudentsFilter extends Component {
 	
 				<label htmlFor='sort_by'>Sort By:</label>
 				<select id='sort_by-filter' name='sort_by' onClick={this.handleFilters}>
-					<option value=''>None</option>
-					<option value='name'>Name</option>
-					<option value='startingCohort'>Starting Cohort</option>
+            <option value='startingCohort'>Starting Cohort</option>
+               <option value='name'>Name</option>
+				
 				</select>
 
 				<label htmlFor='order'>Order:</label>
@@ -76,7 +76,7 @@ class StudentsFilter extends Component {
 					<input type='radio' name='order' value='asc' onClick={this.handleFilters}/>
 				</label>
             <input type="reset" value="Remove filters" onClick={()=>{
-this.setState( { graduated: '', block: '', cohort: '', sort_by: '', order: '' })
+this.setState( { graduated: '', block: '', cohort: '', sort_by: 'startingCohort', order: '' })
 console.log(this.state)
             }}/>
             </fieldset>
