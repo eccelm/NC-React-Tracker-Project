@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const StudentCard = (props) => {
   //console.log(props, "func should be here");
@@ -20,6 +21,9 @@ const StudentCard = (props) => {
           <button id="patch-student-btn" onClick={()=> {
         advanceStudent(_id, false)
       }}>Repeat Block</button>
+           <Link to="/">
+        <button disabled>See more details??</button>
+      </Link>
     </li>
   );
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StudentCard from './StudentCard';
 import Nav from './NavBar';
+import StudentsFilter from './StudentsFilter'
 import StudentStats from './StudentStats';
 import { fetchStudents, patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
@@ -10,13 +11,16 @@ class Students extends Component {
 		students: [],
 		isLoading: false,
 	};
-/*
-pass down patch/ delete to student function
-*/
+
 	async componentDidMount() {
 		let students = await fetchStudents();
 		this.setState({ students, isLoading: false });
 	}
+
+	handleQuery = (graduated, block, cohort, sort_by, order) => {
+		console.log(graduated, block, cohort, sort_by, order)
+	};
+
 	advanceStudent = async (studentId, progress) => {
 		let progressedStudent = await patchStudentsProgress(studentId, progress)
 		console.log("Progressed student", progressedStudent)
@@ -37,6 +41,7 @@ pass down patch/ delete to student function
 				<Nav />
 				<AddNewStudent />
 				<StudentStats props={students} />
+				<StudentsFilter />
 				<ul>
 					{students.map((student) => {
 						return <StudentCard key={student['_id']} {...student} removeStudent={this.removeStudent} advanceStudent={this.advanceStudent}/>;
