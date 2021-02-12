@@ -36,3 +36,14 @@ export const postNewStudent = async (newStudent) => {
 
 // delete a student
 // needs id
+export const deleteStudent = async (studentId) => {
+  const response = await trackerApi
+  .delete(`/students/${studentId}`)
+  console.log(response, response.data, response.status, response.statusText)
+}
+
+export const patchStudentsProgress = async (studentId, progress) => {
+  const response = await trackerApi
+  .patch(`/students/${studentId}?progress=${progress}`)
+  console.log(response, response.data, response.status, response.statusText)
+}
