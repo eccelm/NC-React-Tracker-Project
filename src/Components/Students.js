@@ -3,7 +3,7 @@ import StudentCard from './StudentCard';
 import Nav from './NavBar';
 import StudentsFilter from './StudentsFilter'
 import StudentStats from './StudentStats';
-import { fetchStudents, patchStudentsProgress, deleteStudent } from '../api';
+import { getStudents, patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
 
 class Students extends Component {
@@ -13,7 +13,7 @@ class Students extends Component {
 	};
 
 	async componentDidMount() {
-		let students = await fetchStudents();
+		let students = await getStudents();
 		this.setState({ students, isLoading: false });
 	}
 

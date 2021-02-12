@@ -29,12 +29,12 @@ button {
   text-decoration: none;
   font-size: x-large;
   padding: 15px;
-  border: 10px;
-  margin: 30px;
-  height: 3em;
+  border: 5px;
+  margin: 15px;
+  height: 2em;
   width: auto;
   border-radius: 8px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 button:hover {

@@ -4,9 +4,9 @@ const trackerApi = axios.create({
   baseURL: "https://nc-student-tracker.herokuapp.com/api",
 });
 
-export async function fetchStudents(){
+export async function getStudents(graduated, block, cohort, sort_by, order){
    const response = await trackerApi
-   .get("/students")
+   .get(`/students`, {params: {graduated: graduated, block: block, cohort: cohort, sort_by: sort_by, order: order}})
    const {students} = response.data;
    return students;
 }
