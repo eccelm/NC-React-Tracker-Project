@@ -9,7 +9,7 @@ import AddNewStudent from './AddNewStudent';
 class Students extends Component {
 	state = {
 		students: [],
-		isLoading: false,
+		isLoading: true,
 	};
 
 	async componentDidMount() {
@@ -18,7 +18,12 @@ class Students extends Component {
 	}
 
 	handleQuery = (graduated, block, cohort, sort_by, order) => {
-		//console.log(graduated, block, cohort, sort_by, order)
+		console.log(graduated, block, cohort, sort_by, order, "what handle query got")
+	getStudents(graduated, block, cohort, sort_by, order).then((students)=> {
+		console.log(students)
+		this.setState({students})
+	})
+	
 	};
 
 	advanceStudent = async (studentId, progress) => {

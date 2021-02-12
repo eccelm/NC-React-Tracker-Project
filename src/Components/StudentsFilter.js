@@ -2,33 +2,39 @@ import React, { Component } from 'react';
 
 class StudentsFilter extends Component {
 
-	state = { graduated: '', block: '', cohort: '', sort_by: '', order: 'asc' };
-	// graduated
-	// block
-	// cohort --> drop-down with only available options?
-	// sort_by drop-down
-handleSubmit = (event) => {
-   event.preventDefault();
-   console.log("this is the state of the object when submitted", this.state)
-   const {graduated, block, cohort, sort_by, order} = this.state;
-		console.log(graduated, block, cohort, sort_by, order)
-   
+	state = { graduated: '', block: '', cohort: '', sort_by: '', order: '' };
 
-   
-  // alert(`submitted`)
-}
+
+  componentDidUpdate(prevProps, prevState) {
+   //console.log(prevProps, "prevrops");
+   console.log(prevState, "prevstate");
+   console.log("this is the state of the object when submitted", this.state)
+   //const {handleQuery} = this.props;
+   const {graduated, block, cohort, sort_by, order} = this.state;
+
+   if (
+     prevState !== this.state
+   ) {
+      
+     console.log( "conditional logic was activated, passing:", graduated, block, cohort, sort_by, order)
+    this.props.handleQuery(graduated, block, cohort, sort_by, order)
+   }
+ }
 
 	handleFilters = (event) => {
 		//console.log(event.target.value, '<<<value');
 		//console.log(event.target.name, '<<<name');
       const {name, value} = event.target;
+      console.log(name)
 	this.setState({[name]: value })
    //console.log(this.state, "this is when the handle filter runs")
 	};
+
+
 	render() {
 		return (
 			<>
-            <form id="students-filter-form" onSubmit={this.handleSubmit}>
+            <form id="students-filter-form">
                <fieldset>
                   <legend>Choose your filters, then press the 'filter results' button to apply your preferences</legend>
 				<label htmlFor='graduated'>Student Status:</label>
@@ -47,8 +53,8 @@ handleSubmit = (event) => {
 					<option value='proj'>Project</option>
 				</select>
 
-				<label htmlFor='cohort'>Starting Cohort:</label>
-				<input type='number' name='cohort' id='' onBlur={this.handleFilters} />
+				{/* <label htmlFor='cohort'>Starting Cohort:</label>
+				<input type='number' name='cohort' id='' onChange={this.handleFilters} /> */}
 
 	
 				<label htmlFor='sort_by'>Sort By:</label>
@@ -62,16 +68,15 @@ handleSubmit = (event) => {
 		
 				<label htmlFor='order'>
 					DESC
-					<input type='radio' name='order' value='desc' onChange={this.handleFilters} />
+					<input type='radio' name='order' value='desc' onClick={this.handleFilters} />
 				</label>
 
             <label htmlFor='order'>
 					ASC
-					<input type='radio' name='order' value='asc' onChange={this.handleFilters} defaultChecked/>
+					<input type='radio' name='order' value='asc' onClick={this.handleFilters}/>
 				</label>
-            <input type="submit" value="set filters"/>
             <input type="reset" value="Remove filters" onClick={()=>{
-this.setState( { graduated: '', block: '', cohort: '', sort_by: '', order: 'asc' })
+this.setState( { graduated: '', block: '', cohort: '', sort_by: '', order: '' })
 console.log(this.state)
             }}/>
             </fieldset>
