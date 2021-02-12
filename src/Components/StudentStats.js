@@ -44,7 +44,7 @@ function blockTotals(studentsArray) {
   let blocks = { fundementals: 0, backend: 0, frontend: 0, project: 0, grads: 0 };
 
   for (let student of studentsArray) {
-    console.log(student.currentBlock)
+    //console.log(student.currentBlock)
     if (student["currentBlock"] === "fun") {
       blocks.fundementals++;
     } else if (student["currentBlock"] === "be") {

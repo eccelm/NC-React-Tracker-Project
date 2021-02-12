@@ -27,10 +27,12 @@ export const getStudentById = async (id) => {
 export const postNewStudent = async (newStudent) => {
   const response = await trackerApi
   .post(`/students`, newStudent)
-  console.log(response.data)
+  //console.log(response.data, "this is response data")
   const {student} = response.data;
   return student;
 };
 // patch graduate a student
+// needs id and progress = true or false
 
 // delete a student
+// needs id

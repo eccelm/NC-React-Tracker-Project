@@ -18,3 +18,11 @@ class Students extends Component {
       });
   };
 };
+
+/*
+AddNewStudent
+// from the handleSubmit --> web API FormData - there are also examples with TypeScript
+  const data = new FormData(event.target)
+  console.log("this is state:", this.state, "this is data:", Object.entries(data))
+
+*/
