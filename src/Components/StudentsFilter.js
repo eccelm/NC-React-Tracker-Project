@@ -9,7 +9,8 @@ class StudentsFilter extends Component {
    //console.log(prevProps, "prevrops");
    console.log(prevState, "prevstate");
    console.log("this is the state of the object when submitted", this.state)
-   //const {handleQuery} = this.props;
+   console.log(prevState === this.state)
+   const {handleQuery} = this.props;
    const {graduated, block, cohort, sort_by, order} = this.state;
 
    if (
@@ -17,7 +18,7 @@ class StudentsFilter extends Component {
    ) {
       
      console.log( "conditional logic was activated, passing:", graduated, block, cohort, sort_by, order)
-    this.props.handleQuery(graduated, block, cohort, sort_by, order)
+    handleQuery(graduated, block, cohort, sort_by, order)
    }
  }
 
@@ -26,12 +27,15 @@ class StudentsFilter extends Component {
 		//console.log(event.target.name, '<<<name');
       const {name, value} = event.target;
       console.log(name)
+      if(this.state[name] !== value) {
 	this.setState({[name]: value })
+      }
    //console.log(this.state, "this is when the handle filter runs")
 	};
 
 
 	render() {
+      //const {graduated, block, cohort, sort_by, order} = this.state;
 		return (
 			<>
             <form id="students-filter-form">
@@ -77,7 +81,7 @@ class StudentsFilter extends Component {
 				</label>
             <input type="reset" value="Remove filters" onClick={()=>{
 this.setState( { graduated: '', block: '', cohort: '', sort_by: 'startingCohort', order: '' })
-console.log(this.state)
+
             }}/>
             </fieldset>
             </form>

@@ -5,7 +5,11 @@ import StudentsFilter from './StudentsFilter'
 import StudentStats from './StudentStats';
 import { getStudents, patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
+/*
+To add: 
 
+a logic operator  && conditional render for the stats so not set to zero ?  
+*/
 class Students extends Component {
 	state = {
 		students: [],
@@ -13,7 +17,7 @@ class Students extends Component {
 	};
 
 	async componentDidMount() {
-		let students = await getStudents();
+		let students = await getStudents('startingCohort');
 		this.setState({ students, isLoading: false });
 	}
 
