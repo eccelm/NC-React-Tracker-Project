@@ -53,8 +53,8 @@ class StudentsFilter extends Component {
 					<option value='proj'>Project</option>
 				</select>
 
-				{/* <label htmlFor='cohort'>Starting Cohort:</label>
-				<input type='number' name='cohort' id='' onChange={this.handleFilters} /> */}
+				<label htmlFor='cohort'>Starting Cohort:</label>
+				<input type='number' name='cohort' id='' onChange={this.handleFilters} />
 
 	
 				<label htmlFor='sort_by'>Sort By:</label>
