@@ -18,7 +18,7 @@ class Students extends Component {
 	}
 
 	handleQuery = (graduated, block, cohort, sort_by, order) => {
-		console.log(graduated, block, cohort, sort_by, order)
+		//console.log(graduated, block, cohort, sort_by, order)
 	};
 
 	advanceStudent = async (studentId, progress) => {
@@ -41,7 +41,7 @@ class Students extends Component {
 				<Nav />
 				<AddNewStudent />
 				<StudentStats props={students} />
-				<StudentsFilter />
+				<StudentsFilter handleQuery={this.handleQuery}/>
 				<ul>
 					{students.map((student) => {
 						return <StudentCard key={student['_id']} {...student} removeStudent={this.removeStudent} advanceStudent={this.advanceStudent}/>;
