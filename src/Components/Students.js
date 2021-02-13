@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import StudentCard from './StudentCard';
+import Header from "./Header";
+import Footer from "./Footer";
+
 import Nav from './NavBar';
 import StudentsFilter from './StudentsFilter'
 import StudentStats from './StudentStats';
@@ -47,6 +50,7 @@ class Students extends Component {
 		}
 		return (
 			<div>
+				  <Header />
 				<Nav />
 				<AddNewStudent />
 				<StudentStats props={students} />
@@ -56,6 +60,7 @@ class Students extends Component {
 						return <StudentCard key={student['_id']} {...student} removeStudent={this.removeStudent} advanceStudent={this.advanceStudent}/>;
 					})}
 				</ul>
+				<Footer />
 			</div>
 		);
 	}
