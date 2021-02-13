@@ -19,13 +19,15 @@ class AddNewStudent extends Component {
 
 		return (
 			<>
-				<form id='new-student-form' onSubmit={this.handleSubmit}>
+				<form className="studentform" id='new-student-form' onSubmit={this.handleSubmit}>
 					<fieldset>
-						<legend>Add a New Student</legend>
-						<label htmlFor='student-name'>
+						<legend  className="studentform__legend">Add a New Student</legend>
+						<div className="studentform__group">
+						<label htmlFor='student-name' className="studentform__label">
 							Student Name:
 							<input
 								type='text'
+								className="studentform__input"
 								name='name'
 								id='student-name'
 								onChange={(event) => {
@@ -34,20 +36,23 @@ class AddNewStudent extends Component {
 								required
 							/>
 						</label>
-						<label htmlFor='startingCohort'>
+						</div>
+						<div className="studentform__group">
+						<label htmlFor='starting-cohort'  className="studentform__label">
 							Starting Cohort:
 							<input
 								type='text'
+								className="studentform__input"
 								name='startingCohort'
-								id='startingCohort'
+								id='starting-cohort'
 								onChange={(event) => {
 									this.handleChange('startingCohort', event.target.value);
 								}}
 								required
 							/>
 						</label>
-						<input type='submit' value='Add Student' />
-						<input type='reset' disabled />
+						</div>
+						<input type='submit' value='Add Student'  className="studentform__button"/>
 					</fieldset>
 				</form>
 			</>

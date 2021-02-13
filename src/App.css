@@ -1,4 +1,5 @@
 body {
+  
   margin: auto;
 	text-align: center;
 	align-items: center;
@@ -15,18 +16,7 @@ h1,
 h2 {
 	color: red;
 }
-header {
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  max-width: 100vw;
 
-}
-footer {
-  position: sticky;
-  width: 100%;
-  border: 3px solid #73AD21;
-}
 button {
 	color: white;
 	background-color: #eb1b24;

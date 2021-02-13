@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 
 const Header = (props) => {
 	return (
-		<header>
+		<header className="header">
 			<h1>Student Tracker - {props.screen}</h1>
 			{props.screen === 'Students' ? (
 				<Link to='/'>

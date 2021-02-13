@@ -1,6 +1,66 @@
-$colTest: blue;
+$borders: darkgrey;
+$colbtn: teal;
+$radius: 1rem;
+$btnplain: #eb1b24;
+$btnhover: #da3c23;
+footer {
+	position: sticky;
+	width: 100%;
+	border: 3px solid #73ad21;
+}
 
-h1,
-h2 {
-	color: $colTest;
+.studentform {
+	padding: 2rem;
+	border-radius: $radius;
+	max-width: 500px;
+	background-color: aliceblue;
+text-align: start;
+
+
+	&__group {
+		position: relative;
+		height: 4rem;
+		margin-bottom: 2rem;
+	}
+	&__input {
+		width: 90%;
+		border: 2px solid $borders;
+		border-radius: 0.5rem;
+		font-family: inherit;
+		font-weight: inherit;
+		color: inherit;
+		outline: none;
+		padding: 1rem;
+		background: none;
+		&:hover {
+			border-color: teal;
+		}
+		&:focus {
+			border-color: teal;
+		}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0.75rem;
+		top: 0.75rem;
+	}
+
+	&__button {
+		
+		margin: 1rem;
+		padding: 0.75rem 2rem;
+		background-color: $btnhover;
+		font-family: inherit;
+		font-weight: 16px;
+		border-radius: 0.5rem;
+		outline: none;
+		border: none;
+		transition: background-color 200ms ease-in;
+
+		&:hover {
+			background-color: $btnhover;
+			color: white;
+		}
+	}
 }
