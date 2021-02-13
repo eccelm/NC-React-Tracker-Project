@@ -44,6 +44,9 @@ button:hover {
   transition: 0.3s ease-in-out;
 }
 
+header {
+  background-color: aliceblue;
+}
 /*
 Would modules allow grouping of buttons ?
 

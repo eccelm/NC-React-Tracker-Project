@@ -1,10 +1,12 @@
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <div className="nav-div">
-    <div style={{height:`100px`, backgroundColor: `lightgrey`}}>I AM THE HEADER</div>
-    </div>
+
+<header>
+  <h1>Student Tracker {props.screen}</h1>
+</header>
+   
   );
 };
 

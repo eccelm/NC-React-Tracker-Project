@@ -50,7 +50,7 @@ class Students extends Component {
 		}
 		return (
 			<div>
-				  <Header />
+			 <Header screen="- Students"/>
 				<Nav />
 				<AddNewStudent />
 				<StudentStats props={students} />
