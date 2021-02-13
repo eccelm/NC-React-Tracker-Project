@@ -1,10 +1,11 @@
 body {
+  margin: auto;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
 	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 17px;
+
 	color: black;
 	line-height: 1.5rem;
 	background-color: #f8f9f9;
@@ -16,6 +17,10 @@ h2 {
 }
 header {
   position: sticky;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100vw;
+
 }
 footer {
   position: sticky;
