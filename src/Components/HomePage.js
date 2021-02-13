@@ -9,7 +9,7 @@ const HomePage = () => {
       <Header />
       <h1>Welcome to Northcoders Student Tracker</h1>
       <Link to="/students">
-        <button className="homepage-button">Students</button>
+        <button className="homepage-button">Go to dashboard</button>
       </Link>
       <Footer />
     </div>
