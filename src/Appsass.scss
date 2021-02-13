@@ -9,13 +9,54 @@ footer {
 	border: 3px solid #73ad21;
 }
 
+.filter-form{
+	padding: 3rem;
+	border-radius: $radius;
+	background-color: aliceblue;
+
+&__group{
+	padding: 1rem;
+	width: fit-content
+};
+	&__input {
+		border: 2px solid $borders;
+		border-radius: 0.5rem;
+		font-family: inherit;
+		font-weight: inherit;
+		color: inherit;
+		outline: none;
+		padding: 0.5rem;
+		background: none;
+		&:hover {
+			border-color: teal;
+		}
+		&:focus {
+			border-color: teal;
+		}
+	}
+	&__select{
+		border: 1px solid $borders;
+		border-radius: 0.5rem;
+		color: inherit;
+		outline: none;
+		padding: 0.5rem;
+		background: none;
+		&:hover {
+			border-color: teal;
+		}
+		&:focus {
+			border-color: teal;
+		}
+	}
+
+}
+
 .studentform {
 	padding: 2rem;
 	border-radius: $radius;
 	max-width: 500px;
 	background-color: aliceblue;
-text-align: start;
-
+	text-align: start;
 
 	&__group {
 		position: relative;
@@ -47,7 +88,6 @@ text-align: start;
 	}
 
 	&__button {
-		
 		margin: 1rem;
 		padding: 0.75rem 2rem;
 		background-color: $btnhover;
