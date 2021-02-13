@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import StudentCard from './StudentCard';
-import Header from "./Header";
-import Footer from "./Footer";
-
-import Nav from './NavBar';
-import StudentsFilter from './StudentsFilter'
+import Header from './Header';
+import Footer from './Footer';
+import StudentsFilter from './StudentsFilter';
 import StudentStats from './StudentStats';
 import { getStudents, patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
@@ -25,23 +23,29 @@ class Students extends Component {
 	}
 
 	handleQuery = (graduated, block, cohort, sort_by, order) => {
-		console.log(graduated, block, cohort, sort_by, order, "what handle query got")
-	getStudents(graduated, block, cohort, sort_by, order).then((students)=> {
-		console.log(students)
-		this.setState({students})
-	})
-	
+		console.log(
+			graduated,
+			block,
+			cohort,
+			sort_by,
+			order,
+			'what handle query got'
+		);
+		getStudents(graduated, block, cohort, sort_by, order).then((students) => {
+			console.log(students);
+			this.setState({ students });
+		});
 	};
 
 	advanceStudent = async (studentId, progress) => {
-		let progressedStudent = await patchStudentsProgress(studentId, progress)
-		console.log("Progressed student", progressedStudent)
-	}
+		let progressedStudent = await patchStudentsProgress(studentId, progress);
+		console.log('Progressed student', progressedStudent);
+	};
 	removeStudent = (studentId) => {
 		deleteStudent(studentId).then((res) => {
-			console.log("the response", res)
-		})
-	}
+			console.log('the response', res);
+		});
+	};
 	render() {
 		const { isLoading, students } = this.state;
 
@@ -50,14 +54,20 @@ class Students extends Component {
 		}
 		return (
 			<div>
-			 <Header screen="- Students"/>
-				<Nav />
+				<Header screen='Students' />
 				<AddNewStudent />
 				<StudentStats props={students} />
-				<StudentsFilter handleQuery={this.handleQuery}/>
+				<StudentsFilter handleQuery={this.handleQuery} />
 				<ul>
 					{students.map((student) => {
-						return <StudentCard key={student['_id']} {...student} removeStudent={this.removeStudent} advanceStudent={this.advanceStudent}/>;
+						return (
+							<StudentCard
+								key={student['_id']}
+								{...student}
+								removeStudent={this.removeStudent}
+								advanceStudent={this.advanceStudent}
+							/>
+						);
 					})}
 				</ul>
 				<Footer />

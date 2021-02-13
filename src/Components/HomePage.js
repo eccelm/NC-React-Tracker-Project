@@ -6,7 +6,7 @@ import Footer from "./Footer";
 const HomePage = () => {
   return (
     <div className="homepage-wrapper">
-      <Header screen="- Home"/>
+      <Header screen="Home"/>
       <h1>Welcome to Northcoders Student Tracker</h1>
       <Link to="/students">
         <button className="homepage-button">Go to dashboard</button>
