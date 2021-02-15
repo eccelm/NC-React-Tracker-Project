@@ -48,8 +48,7 @@ class StudentsFilter extends Component {
 				<form className='filter-form' id='students-filter-form'>
 					<fieldset>
 						<legend>
-							Choose your filters, then press the 'filter results' button to
-							apply your preferences
+							Your filters will be automatically applied. To remove all filters click 'reset filters'
 						</legend>
 						<div className='filter-form__group'>
 							<label className='filter-form__label' htmlFor='graduated'>
