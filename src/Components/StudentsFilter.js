@@ -44,7 +44,7 @@ class StudentsFilter extends Component {
 	render() {
 		//const {graduated, block, cohort, sort_by, order} = this.state;
 		return (
-			<div id='flex'>
+			<div className='flex'>
 				<form className='filter-form' id='students-filter-form'>
 					<fieldset>
 						<legend>

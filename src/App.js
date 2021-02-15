@@ -1,4 +1,4 @@
-import "./App.css";
+
 import "./Appsass.scss"
 import { Router } from "@reach/router";
 import HomePage from "./Components/HomePage";

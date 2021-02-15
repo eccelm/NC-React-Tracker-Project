@@ -152,3 +152,36 @@ footer {
 		}
 	}
 }
+
+.flex{
+
+};
+
+
+// OLD BUTTONS
+
+
+button {
+	color: white;
+	background-color: #eb1b24;
+	text-align: center;
+	text-decoration: none;
+	font-size: x-large;
+	padding: 15px;
+	border: 5px;
+	margin: 15px;
+	height: 2em;
+	width: auto;
+	border-radius: 8px;
+	transition: 0.2s ease-in-out;
+}
+
+button:hover {
+	color: white;
+	background-color: #da3c23;
+	border-left: 3px solid;
+	border-right: 3px solid;
+	border-radius: 8px;
+	border-radius: 30px;
+	transition: 0.3s ease-in-out;
+}
