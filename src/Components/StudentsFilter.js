@@ -44,11 +44,12 @@ class StudentsFilter extends Component {
 	render() {
 		//const {graduated, block, cohort, sort_by, order} = this.state;
 		return (
-			<div id="flex">
+			<div id='flex'>
 				<form className='filter-form' id='students-filter-form'>
 					<fieldset>
 						<legend>
-							Your filters will be automatically applied. To remove all filters click 'reset filters'
+							Your filters will be automatically applied. To remove all filters
+							click 'reset filters'
 						</legend>
 						<div className='filter-form__group'>
 							<label className='filter-form__label' htmlFor='graduated'>
@@ -56,7 +57,7 @@ class StudentsFilter extends Component {
 							</label>
 							<select
 								className='filter-form__select'
-								id='grad-filter'
+								id='graduated'
 								name='graduated'
 								onClick={this.handleFilters}>
 								<option value=''>All</option>
@@ -70,7 +71,7 @@ class StudentsFilter extends Component {
 							</label>
 							<select
 								className='filter-form__select'
-								id='block-filter'
+								id='block'
 								name='block'
 								onClick={this.handleFilters}>
 								<option value=''>All Blocks</option>
@@ -88,7 +89,7 @@ class StudentsFilter extends Component {
 								className='filter-form__input'
 								type='number'
 								name='cohort'
-								id=''
+								id='cohort'
 								onChange={this.handleFilters}
 							/>
 						</div>{' '}
@@ -98,7 +99,7 @@ class StudentsFilter extends Component {
 							</label>
 							<select
 								className='filter-form__select'
-								id='sort_by-filter'
+								id='sort_by'
 								name='sort_by'
 								onClick={this.handleFilters}>
 								<option value='startingCohort'>Starting Cohort</option>
@@ -115,6 +116,7 @@ class StudentsFilter extends Component {
 								<input
 									type='radio'
 									name='order'
+									id='order'
 									value='desc'
 									onClick={this.handleFilters}
 								/>
@@ -126,6 +128,7 @@ class StudentsFilter extends Component {
 									className='filter-form__radio'
 									type='radio'
 									name='order'
+									id='order'
 									value='asc'
 									onClick={this.handleFilters}
 								/>
@@ -134,7 +137,7 @@ class StudentsFilter extends Component {
 						<input
 							className='filter-form__radio'
 							type='reset'
-							value='Remove filters'
+							value='Reset Filters'
 							onClick={() => {
 								this.setState({
 									graduated: '',
