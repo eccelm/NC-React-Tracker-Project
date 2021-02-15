@@ -18,7 +18,7 @@ class AddNewStudent extends Component {
 	render() {
 
 		return (
-			<>
+			<div id="studentform-wrapper">
 				<form className="studentform" id='new-student-form' onSubmit={this.handleSubmit}>
 					<fieldset>
 						<legend  className="studentform__legend">Add a New Student</legend>
@@ -55,7 +55,7 @@ class AddNewStudent extends Component {
 						<input type='submit' value='Add Student'  className="studentform__button"/>
 					</fieldset>
 				</form>
-			</>
+			</div>
 		);
 	}
 }

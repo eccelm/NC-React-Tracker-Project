@@ -1,61 +1,62 @@
-$borders: darkgrey;
-$colbtn: teal;
 $radius: 1rem;
 $btnplain: #eb1b24;
 $btnhover: #da3c23;
+$borders: darkgrey;
+$background: #fdffff;
+$colbtn: teal;
+
+body {
+	margin: auto;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	color: black;
+	line-height: 1.5rem;
+	background-color: $background;
+}
+
+.homepage-wrapper {
+	display: flex;
+	flex-flow: column wrap;
+	min-height: 100vh;
+	justify-content: space-between;
+}
+
+header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: center;
+	background-color: $btnhover;
+	color: $background;
+
+	h1 {
+		padding-left: 5%;
+	}
+}
+
 footer {
 	position: sticky;
 	width: 100%;
-	border: 3px solid #73ad21;
+	background-color: $btnhover;
+	color: $background;
 }
 
-.filter-form{
-	padding: 3rem;
-	border-radius: $radius;
-	background-color: aliceblue;
+#row-1 {
+	display: flex;
+}
 
-&__group{
-	padding: 1rem;
-	width: fit-content
-};
-	&__input {
-		border: 2px solid $borders;
-		border-radius: 0.5rem;
-		font-family: inherit;
-		font-weight: inherit;
-		color: inherit;
-		outline: none;
-		padding: 0.5rem;
-		background: none;
-		&:hover {
-			border-color: teal;
-		}
-		&:focus {
-			border-color: teal;
-		}
-	}
-	&__select{
-		border: 1px solid $borders;
-		border-radius: 0.5rem;
-		color: inherit;
-		outline: none;
-		padding: 0.5rem;
-		background: none;
-		&:hover {
-			border-color: teal;
-		}
-		&:focus {
-			border-color: teal;
-		}
-	}
-
+#studentform-wrapper {
+	flex-grow: 1;
+	width: 50%;
+	border: 10px solid $colbtn;
 }
 
 .studentform {
 	padding: 2rem;
 	border-radius: $radius;
-	max-width: 500px;
-	background-color: aliceblue;
+
 	text-align: start;
 
 	&__group {
@@ -63,8 +64,15 @@ footer {
 		height: 4rem;
 		margin-bottom: 2rem;
 	}
+
+	&__label {
+		position: absolute;
+		left: 0.75rem;
+		top: 0.75rem;
+	}
+
 	&__input {
-		width: 90%;
+		width: 100%;
 		border: 2px solid $borders;
 		border-radius: 0.5rem;
 		font-family: inherit;
@@ -81,26 +89,65 @@ footer {
 		}
 	}
 
-	&__label {
-		position: absolute;
-		left: 0.75rem;
-		top: 0.75rem;
-	}
-
 	&__button {
 		margin: 1rem;
 		padding: 0.75rem 2rem;
-		background-color: $btnhover;
+		background-color: $background;
 		font-family: inherit;
-		font-weight: 16px;
+		font-size: inherit;
+		border: 2px solid $colbtn;
 		border-radius: 0.5rem;
 		outline: none;
-		border: none;
 		transition: background-color 200ms ease-in;
 
 		&:hover {
-			background-color: $btnhover;
-			color: white;
+			background-color: $colbtn;
+			color: $background;
+		}
+	}
+}
+
+.student-stats {
+	flex-grow: 1;
+	width: 50%;
+}
+
+.filter-form {
+	padding: 3rem;
+	border-radius: $radius;
+
+	&__group {
+		padding: 1rem;
+		width: fit-content;
+	}
+	&__input {
+		border: 2px solid $borders;
+		border-radius: 0.5rem;
+		font-family: inherit;
+		font-weight: inherit;
+		color: inherit;
+		outline: none;
+		padding: 0.5rem;
+		background: none;
+		&:hover {
+			border-color: teal;
+		}
+		&:focus {
+			border-color: teal;
+		}
+	}
+	&__select {
+		border: 1px solid $borders;
+		border-radius: 0.5rem;
+		color: inherit;
+		outline: none;
+		padding: 0.5rem;
+		background: none;
+		&:hover {
+			border-color: teal;
+		}
+		&:focus {
+			border-color: teal;
 		}
 	}
 }

@@ -7,10 +7,12 @@ const HomePage = () => {
   return (
     <div className="homepage-wrapper">
       <Header screen="Home"/>
+      <div className="hompage-contents">
       <h1>Welcome to Northcoders Student Tracker</h1>
       <Link to="/students">
         <button className="homepage-button">Go to dashboard</button>
       </Link>
+      </div>
       <Footer />
     </div>
   );

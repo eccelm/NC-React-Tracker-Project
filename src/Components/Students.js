@@ -55,10 +55,12 @@ class Students extends Component {
 		return (
 			<div>
 				<Header screen='Students' />
+				<div id="row-1">
 				<AddNewStudent />
 				<StudentStats props={students} />
+				</div>
 				<StudentsFilter handleQuery={this.handleQuery} />
-				<ul>
+				<ul id="students-list">
 					{students.map((student) => {
 						return (
 							<StudentCard

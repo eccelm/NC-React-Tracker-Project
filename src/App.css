@@ -1,21 +1,3 @@
-body {
-  
-  margin: auto;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-
-	color: black;
-	line-height: 1.5rem;
-	background-color: #f8f9f9;
-}
-
-h1,
-h2 {
-	color: red;
-}
 
 button {
 	color: white;
@@ -42,9 +24,6 @@ button:hover {
 	transition: 0.3s ease-in-out;
 }
 
-header {
-	background-color: aliceblue;
-}
 /*
 Would modules allow grouping of buttons ?
 
