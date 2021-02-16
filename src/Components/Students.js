@@ -6,11 +6,7 @@ import StudentsFilter from './StudentsFilter';
 import StudentStats from './StudentStats';
 import { getStudents, patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
-/*
-To add: 
 
-a logic operator  && conditional render for the stats so not set to zero ?  
-*/
 class Students extends Component {
 	state = {
 		students: [],
@@ -50,15 +46,13 @@ class Students extends Component {
 		const { isLoading, students } = this.state;
 
 		if (isLoading) {
-			return <h2>Loading list of students ...</h2>;
+			return <h1>Loading list of students ...</h1>;
 		}
 		return (
-			<div id="students-wrapper">
+			<div id="studentspage-wrapper">
 				<Header screen='Students' />
-		
 				<AddNewStudent />
 				<StudentStats props={students} />
-			
 				<StudentsFilter handleQuery={this.handleQuery} />
 				<ul id="students-list">
 					{students.map((student) => {

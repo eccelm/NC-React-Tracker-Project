@@ -8,7 +8,7 @@ const StudentCard = (props) => {
 
   return (
     <>   
-    <li className="student-card" style={{ border: `2px solid`, listStyleType: `none`}}>
+    <li className="student-card" id="students-list-item" style={{ border: `2px solid`, listStyleType: `none`}}>
       <button id="delete-student-btn" onClick={()=> {removeStudent(_id)}}>X</button>
       <h2>
         {name}

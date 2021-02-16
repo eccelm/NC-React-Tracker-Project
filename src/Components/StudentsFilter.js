@@ -44,9 +44,9 @@ class StudentsFilter extends Component {
 	render() {
 		//const {graduated, block, cohort, sort_by, order} = this.state;
 		return (
-			<div className='flex'>
+			<div className='filterform-wrapper'>
 				<form className='filter-form' id='students-filter-form'>
-					<fieldset>
+					<fieldset className='filter-form__fieldset'>
 						<legend>
 							Your filters will be automatically applied. To remove all filters
 							click 'reset filters'
