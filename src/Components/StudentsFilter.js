@@ -42,7 +42,7 @@ class StudentsFilter extends Component {
 	};
 
 	render() {
-		//const {graduated, block, cohort, sort_by, order} = this.state;
+
 		return (
 			<div className='filterform-wrapper'>
 				<form className='filter-form' id='students-filter-form'>
@@ -53,7 +53,7 @@ class StudentsFilter extends Component {
 						</legend>
 						<div className='filter-form__group'>
 							<label className='filter-form__label' htmlFor='graduated'>
-								Student Status:
+								Student Status: {' '}
 							</label>
 							<select
 								className='filter-form__select'
@@ -67,7 +67,7 @@ class StudentsFilter extends Component {
 						</div>{' '}
 						<div className='filter-form__group'>
 							<label className='filter-form__label' htmlFor='block'>
-								Filter by Block:
+								Filter by Block: {' '}
 							</label>
 							<select
 								className='filter-form__select'
@@ -83,7 +83,7 @@ class StudentsFilter extends Component {
 						</div>{' '}
 						<div className='filter-form__group'>
 							<label className='filter-form__label' htmlFor='cohort'>
-								Starting Cohort:
+								Starting Cohort: {' '}
 							</label>
 							<input
 								className='filter-form__input'
@@ -95,7 +95,7 @@ class StudentsFilter extends Component {
 						</div>{' '}
 						<div className='filter-form__group'>
 							<label htmlFor='sort_by' className='filter-form__label'>
-								Sort By:
+								Sort By:{' '}
 							</label>
 							<select
 								className='filter-form__select'
@@ -135,7 +135,7 @@ class StudentsFilter extends Component {
 							</label>
 						</div>
 						<input
-							className='filter-form__radio'
+							className='filter-form__reset'
 							type='reset'
 							value='Reset Filters'
 							onClick={() => {

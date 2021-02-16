@@ -3,7 +3,7 @@ $btnplain: #eb1b24;
 $btnhover: #da3c23;
 $borders: darkgrey;
 $background: #fdffff;
-$colbtn: teal;
+$bordersfocus: teal;
 
 body {
 	margin: auto;
@@ -47,23 +47,25 @@ footer {
 /*
 Running Order
 1 - Students page flex box 
-
-2 - student form
-3 - stats
-4 - filter
-5 - cards
+2 - AddNewStudent.js (form)
+3 - StudentStats.js
+4 - StudentFilter.js (form)
+5 - StudentCard.js
 */
+
+// Flex Layout for the '/students' 
 #studentspage-wrapper {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
+//AddNewStudent Component
 #studentform-wrapper {
 	flex-grow: 1;
-	border: 10px solid $colbtn;
 	width: 45%;
 }
-
 .studentform {
 	padding: 2rem;
 	border-radius: $radius;
@@ -86,17 +88,14 @@ Running Order
 		width: 100%;
 		border: 2px solid $borders;
 		border-radius: 0.5rem;
-		font-family: inherit;
-		font-weight: inherit;
-		color: inherit;
-		outline: none;
+	
 		padding: 1rem;
 		background: none;
 		&:hover {
-			border-color: teal;
+			border-color: $bordersfocus;
 		}
 		&:focus {
-			border-color: teal;
+			border-color: $bordersfocus;
 		}
 	}
 
@@ -106,13 +105,13 @@ Running Order
 		background-color: $background;
 		font-family: inherit;
 		font-size: inherit;
-		border: 2px solid $colbtn;
+		border: 2px solid $bordersfocus;
 		border-radius: 0.5rem;
 		outline: none;
 		transition: background-color 200ms ease-in;
 
 		&:hover {
-			background-color: $colbtn;
+			background-color: $bordersfocus;
 			color: $background;
 		}
 	}
@@ -125,7 +124,7 @@ Running Order
 
 .filterform-wrapper{
 	width: 100%;
-	border: 2px solid blue;
+	
 }
 .filter-form {
 	padding: 3rem;
@@ -135,6 +134,7 @@ Running Order
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 	&__group {
 		padding: 1rem;
@@ -144,8 +144,7 @@ Running Order
 		border-radius: 0.5rem;
 		font-family: inherit;
 		font-weight: inherit;
-		color: inherit;
-		outline: none;
+		
 		padding: 0.5rem;
 		background: none;
 		&:hover {
