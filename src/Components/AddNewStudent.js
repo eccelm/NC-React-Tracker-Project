@@ -20,6 +20,7 @@ class AddNewStudent extends Component {
 		return (
 			<div id="studentform-wrapper">
 				<form className="studentform" id='new-student-form' onSubmit={this.handleSubmit}>
+				<h2>TEST HEADING</h2>
 					<fieldset>
 						<legend  className="studentform__legend">Add a New Student</legend>
 						<div className="studentform__group">

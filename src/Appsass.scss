@@ -3,8 +3,8 @@ $btnplain: #eb1b24;
 $btnhover: #da3c23;
 $borders: darkgrey;
 $background: #fdffff;
-$bordersfocus: teal;
-
+$bordersfocus: #008080;
+$btnselect: #006666;
 body {
 	margin: auto;
 	text-align: center;
@@ -15,7 +15,25 @@ body {
 	line-height: 1.4rem;
 	background-color: $background;
 }
+button {
+	margin: 1rem;
+	padding: 0.75rem 1rem;
 
+	font-family: inherit;
+	font-size: inherit;
+	border: 2px solid $bordersfocus;
+	border-radius: 0.5rem;
+	outline: none;
+	background-color: $bordersfocus;
+	color: $background;
+	transition: background-color 200ms ease-in;
+
+	&:hover {
+		background-color: $btnselect;
+		color: $background;
+		border: 2px solid $btnselect;
+	}
+}
 .homepage-wrapper {
 	display: flex;
 	flex-flow: column wrap;
@@ -27,13 +45,17 @@ header {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	align-content: center;
 	background-color: $btnhover;
 	color: $background;
 	width: 100%;
 
 	h1 {
 		padding-left: 5%;
+	}
+	button{
+		border: 2px solid $btnhover;
+		background-color: $background;
+		color: #eb1b24;
 	}
 }
 
@@ -44,146 +66,187 @@ footer {
 	color: $background;
 }
 
-/*
-Running Order
-1 - Students page flex box 
-2 - AddNewStudent.js (form)
-3 - StudentStats.js
-4 - StudentFilter.js (form)
-5 - StudentCard.js
-*/
-
-// Flex Layout for the '/students' 
+// Flex Layout for the '/students'
 #studentspage-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-}
+	align-items: stretch;
 
-//AddNewStudent Component
-#studentform-wrapper {
-	flex-grow: 1;
-	width: 45%;
-}
-.studentform {
-	padding: 2rem;
-	border-radius: $radius;
+	/*
+Running Order
 
-	text-align: start;
+1 - AddNewStudent.js (form)
+2 - StudentStats.js
+3 - StudentFilter.js (form)
+4 - StudentCard.js
+*/
 
-	&__group {
-		position: relative;
-		height: 4rem;
-		margin-bottom: 2rem;
+	//AddNewStudent Component
+	#studentform-wrapper {
+		flex-grow: 1;
+		width: 45%;
+		text-align: center;
+
+		.studentform {
+			padding: 2rem;
+			border-radius: $radius;
+			text-align: start;
+
+			h2 {
+				text-align: center;
+			}
+
+			&__group {
+				position: relative;
+				height: 4rem;
+				margin-bottom: 2rem;
+			}
+
+			&__label {
+				position: absolute;
+				left: 0.75rem;
+				top: 0.75rem;
+			}
+
+			&__input {
+				width: 100%;
+				border: 1px solid $borders;
+				border-radius: 0.5rem;
+
+				padding: 1rem;
+				background: none;
+				&:hover {
+					border-color: $bordersfocus;
+				}
+				&:focus {
+					border-color: $bordersfocus;
+				}
+			}
+
+			&__button {
+				margin: 1rem;
+				padding: 0.75rem 2rem;
+				background-color: $background;
+				font-family: inherit;
+				font-size: inherit;
+				border: 2px solid $bordersfocus;
+				border-radius: 0.5rem;
+				outline: none;
+				transition: background-color 200ms ease-in;
+
+				&:hover {
+					background-color: $bordersfocus;
+					color: $background;
+				}
+			}
+		}
 	}
+	//StudentStats Component
+	.studentstats-wrapper {
+		padding: 2rem;
+		flex-grow: 1;
+		width: 50%;
+		font-family: inherit;
+		.studentstats {
+			&__totals {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: stretch;
+				align-content: stretch;
+				justify-content: center;
+			}
+			&__totalcontainer {
+				border-radius: 10px;
+				width: 12rem;
+				padding: 0.5rem;
+				margin: 1rem;
+				text-align: center;
+				border: 5px 5px solid;
+				border-color: $borders;
+				box-shadow: 0 0 10px $borders;
+			}
 
-	&__label {
-		position: absolute;
-		left: 0.75rem;
-		top: 0.75rem;
+			&__number {
+				width: fit-content;
+				padding: 0.75rem 1.2rem;
+				background-color: $background;
+				border: 2px solid;
+				border-color: $bordersfocus;
+				box-shadow: 0 0 10px $bordersfocus;
+				border-radius: 40%;
+				text-align: center;
+			}
+		}
 	}
-
-	&__input {
+	//StudentsFilter Component
+	.filterform-wrapper {
 		width: 100%;
-		border: 2px solid $borders;
-		border-radius: 0.5rem;
-	
-		padding: 1rem;
-		background: none;
-		&:hover {
-			border-color: $bordersfocus;
-		}
-		&:focus {
-			border-color: $bordersfocus;
+		.filter-form {
+			padding: 2rem;
+			border-radius: $radius;
+
+			&__fieldset {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: baseline;
+			}
+			&__group {
+				padding: 1rem;
+			}
+			&__input {
+				border: 2px solid $borders;
+				border-radius: 0.5rem;
+				font-family: inherit;
+				font-weight: inherit;
+				padding: 0.5rem;
+				background: none;
+				&:hover {
+					border-color: teal;
+				}
+				&:focus {
+					border-color: teal;
+				}
+			}
+			&__select {
+				border: 1px solid $borders;
+				border-radius: 0.5rem;
+				color: inherit;
+				outline: none;
+				padding: 0.5rem;
+				background: none;
+				&:hover {
+					border-color: teal;
+				}
+				&:focus {
+					border-color: teal;
+				}
+			}
 		}
 	}
-
-	&__button {
-		margin: 1rem;
-		padding: 0.75rem 2rem;
-		background-color: $background;
-		font-family: inherit;
-		font-size: inherit;
-		border: 2px solid $bordersfocus;
-		border-radius: 0.5rem;
-		outline: none;
-		transition: background-color 200ms ease-in;
-
-		&:hover {
-			background-color: $bordersfocus;
-			color: $background;
-		}
+	//STUDENT CARDS
+	// decide on format grid or flex
+	#students-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: space-evenly;
 	}
-}
-
-.studentstats-wrapper {
-	flex-grow: 1;
-	width: 45%;
-}
-
-.filterform-wrapper{
-	width: 100%;
-	
-}
-.filter-form {
-	padding: 3rem;
-	border-radius: $radius;
-	
-&__fieldset{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-	&__group {
-		padding: 1rem;
-	}
-	&__input {
-		border: 2px solid $borders;
-		border-radius: 0.5rem;
-		font-family: inherit;
-		font-weight: inherit;
-		
-		padding: 0.5rem;
-		background: none;
-		&:hover {
-			border-color: teal;
-		}
-		&:focus {
-			border-color: teal;
-		}
-	}
-	&__select {
-		border: 1px solid $borders;
-		border-radius: 0.5rem;
-		color: inherit;
-		outline: none;
-		padding: 0.5rem;
-		background: none;
-		&:hover {
-			border-color: teal;
-		}
-		&:focus {
-			border-color: teal;
-		}
+	#students-list-item {
+		list-style-type: none;
+		margin-bottom: 0.5rem;
+		padding: 1rem 1rem;
+		flex: 0 24%;
+		border: 5px 5px solid;
+		border-color: $borders;
+		box-shadow: 0 0 10px $borders;
 	}
 }
 
-//STUDENT CARDS
-// decide on format grid or flex
-#students-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	justify-content: space-evenly;
-}
-#students-list-item {
-	margin-bottom: 0.5rem;
-	padding: 1rem 1rem;
-	flex: 0 24%;
-}
+// Alternate grid option
 
 // #students-list{
 // 	--auto-grid-min-size: 16rem;

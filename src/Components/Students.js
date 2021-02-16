@@ -51,8 +51,8 @@ class Students extends Component {
 		return (
 			<div id="studentspage-wrapper">
 				<Header screen='Students' />
+				<StudentStats students={students} />
 				<AddNewStudent />
-				<StudentStats props={students} />
 				<StudentsFilter handleQuery={this.handleQuery} />
 				<ul id="students-list">
 					{students.map((student) => {
