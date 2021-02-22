@@ -10,22 +10,18 @@ class StudentsFilter extends Component {
 	};
 
 	componentDidUpdate(prevProps, prevState) {
-		//console.log(prevProps, "prevrops");
-		console.log(prevState, 'prevstate');
-		console.log('this is the state of the object when submitted', this.state);
-		console.log(prevState === this.state);
 		const { handleQuery } = this.props;
 		const { graduated, block, cohort, sort_by, order } = this.state;
 
 		if (prevState !== this.state) {
-			console.log(
-				'conditional logic was activated, passing:',
-				graduated,
-				block,
-				cohort,
-				sort_by,
-				order
-			);
+			// console.log(
+			// 	'conditional logic was activated, passing:',
+			// 	graduated,
+			// 	block,
+			// 	cohort,
+			// 	sort_by,
+			// 	order
+			// );
 			handleQuery(graduated, block, cohort, sort_by, order);
 		}
 	}
@@ -34,7 +30,6 @@ class StudentsFilter extends Component {
 		//console.log(event.target.value, '<<<value');
 		//console.log(event.target.name, '<<<name');
 		const { name, value } = event.target;
-		console.log(name);
 		if (this.state[name] !== value) {
 			this.setState({ [name]: value });
 		}

@@ -7,7 +7,6 @@ const trackerApi = axios.create({
 export async function getStudents(graduated, block, cohort, sort_by, order){
    const response = await trackerApi
    .get(`/students`, {params:{ graduated: graduated, block: block, cohort: cohort, sort_by: sort_by, order: order}})
-   console.log(response.data)
    const {students} = response.data;
    return students;
 }

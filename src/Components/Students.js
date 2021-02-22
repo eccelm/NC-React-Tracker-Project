@@ -19,14 +19,6 @@ class Students extends Component {
 	}
 
 	handleQuery = (graduated, block, cohort, sort_by, order) => {
-		console.log(
-			graduated,
-			block,
-			cohort,
-			sort_by,
-			order,
-			'what handle query got'
-		);
 		getStudents(graduated, block, cohort, sort_by, order).then((students) => {
 			console.log(students);
 			this.setState({ students });
@@ -35,12 +27,23 @@ class Students extends Component {
 
 	advanceStudent = async (studentId, progress) => {
 		let progressedStudent = await patchStudentsProgress(studentId, progress);
-		console.log('Progressed student', progressedStudent);
+		//console.log('Progressed student', progressedStudent);
 	};
 	removeStudent = (studentId) => {
 		deleteStudent(studentId).then((res) => {
 			console.log('the response', res);
-		//	this.setState({students: [{}]})
+
+const { students } = this.state;
+console.log(students.length)
+		const filteredStudents =students.filter(
+			(student)=>{
+		
+				return student._id !== studentId;
+			}
+		
+		)
+		console.log(filteredStudents)
+		this.setState({students: filteredStudents})
 		});
 	};
 	render() {
