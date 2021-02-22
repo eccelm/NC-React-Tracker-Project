@@ -40,6 +40,7 @@ class Students extends Component {
 	removeStudent = (studentId) => {
 		deleteStudent(studentId).then((res) => {
 			console.log('the response', res);
+		//	this.setState({students: [{}]})
 		});
 	};
 	render() {
@@ -54,6 +55,7 @@ class Students extends Component {
 				<StudentStats students={students} />
 				<AddNewStudent />
 				<StudentsFilter handleQuery={this.handleQuery} />
+				<h2>Students List:</h2>
 				<ul id="students-list">
 					{students.map((student) => {
 						return (

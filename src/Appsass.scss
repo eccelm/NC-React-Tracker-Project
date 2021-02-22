@@ -51,6 +51,7 @@ header {
 
 	h1 {
 		padding-left: 5%;
+
 	}
 	button{
 		border: 2px solid $btnhover;
@@ -153,29 +154,28 @@ Running Order
 				display: flex;
 				flex-wrap: wrap;
 				align-items: stretch;
-				align-content: stretch;
+			
 				justify-content: center;
 			}
 			&__totalcontainer {
 				border-radius: 10px;
 				width: 12rem;
-				padding: 0.5rem;
+				padding: 1rem;
 				margin: 1rem;
-				text-align: center;
 				border: 5px 5px solid;
 				border-color: $borders;
 				box-shadow: 0 0 10px $borders;
+				justify-content: center;
 			}
 
 			&__number {
-				width: fit-content;
-				padding: 0.75rem 1.2rem;
-				background-color: $background;
-				border: 2px solid;
-				border-color: $bordersfocus;
-				box-shadow: 0 0 10px $bordersfocus;
+				width: 1rem;
+				margin: auto;
+				margin-bottom: 1rem;
+				padding: 0.9rem 1.2rem;
+				box-shadow: 0 0 10px $btnselect;
 				border-radius: 40%;
-				text-align: center;
+			
 			}
 		}
 	}
@@ -194,28 +194,15 @@ Running Order
 				align-items: baseline;
 			}
 			&__group {
-				padding: 1rem;
+				padding: 1.5rem;
 			}
-			&__input {
+			&__input, &__select, &__reset {
 				border: 2px solid $borders;
 				border-radius: 0.5rem;
 				font-family: inherit;
 				font-weight: inherit;
 				padding: 0.5rem;
-				background: none;
-				&:hover {
-					border-color: teal;
-				}
-				&:focus {
-					border-color: teal;
-				}
-			}
-			&__select {
-				border: 1px solid $borders;
-				border-radius: 0.5rem;
 				color: inherit;
-				outline: none;
-				padding: 0.5rem;
 				background: none;
 				&:hover {
 					border-color: teal;
@@ -224,6 +211,7 @@ Running Order
 					border-color: teal;
 				}
 			}
+
 		}
 	}
 	//STUDENT CARDS
