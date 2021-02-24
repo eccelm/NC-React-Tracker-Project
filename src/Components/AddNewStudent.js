@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import { postNewStudent } from '../api';
+
 
 class AddNewStudent extends Component {
 	state = {
 		name: '',
 		startingCohort: '',
 	};
+
 	handleChange = (key, value) => {
 		//console.log('value:', value, 'key:', key);
 		this.setState({ [key]: value });
 		//console.log('NewStu:', this.state);
 	};
-	handleSubmit = (event) => {
-		event.preventDefault();
-		postNewStudent(this.state);
-	};
-	render() {
 
+	render() {
+		const {addStudent} = this.props;
 		return (
 			<div id="studentform-wrapper">
-				<form className="studentform" id='new-student-form' onSubmit={this.handleSubmit}>
+				<form className="studentform" id='new-student-form' onSubmit={(event)=>{
+					addStudent(event, this.state)
+				}}>
 				<h2>ADD STUDENTS</h2>
 					<fieldset>
 						<legend  className="studentform__legend">Add a New Student</legend>

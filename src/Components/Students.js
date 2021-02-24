@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import StudentsFilter from './StudentsFilter';
 import StudentStats from './StudentStats';
-import { getStudents, patchStudentsProgress, deleteStudent } from '../api';
+import { getStudents,postNewStudent,  patchStudentsProgress, deleteStudent } from '../api';
 import AddNewStudent from './AddNewStudent';
 
 class Students extends Component {
@@ -23,6 +23,17 @@ class Students extends Component {
 			console.log(students);
 			this.setState({ students });
 		});
+	};
+
+	addStudent = (event, newStudent) => {
+		event.preventDefault();
+		console.log(event, newStudent)
+		postNewStudent(newStudent).then(
+			(response) => {
+				console.log(response)
+				this.setState({students: [...this.state.students, response]})
+			}
+		)
 	};
 
 	advanceStudent = async (studentId, progress) => {
@@ -56,7 +67,7 @@ console.log(students.length)
 			<div id="studentspage-wrapper">
 				<Header screen='Students' />
 				<StudentStats students={students} />
-				<AddNewStudent />
+				<AddNewStudent 	addStudent={this.addStudent}/>
 				<StudentsFilter handleQuery={this.handleQuery} />
 				<h2>Students List:</h2>
 				<ul id="students-list">

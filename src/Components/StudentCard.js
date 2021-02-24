@@ -47,9 +47,9 @@ const StudentCard = (props) => {
 					</>
 				) : null}
 
-				<Link to='/'>
+				{/* <Link to='/'>
 					<button disabled>See more details??</button>
-				</Link>
+				</Link> */}
 			</li>
 		</>
 	);
