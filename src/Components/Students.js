@@ -20,17 +20,17 @@ class Students extends Component {
 
 	handleQuery = (graduated, block, cohort, sort_by, order) => {
 		getStudents(graduated, block, cohort, sort_by, order).then((students) => {
-			console.log(students);
+		//	console.log(students);
 			this.setState({ students });
 		});
 	};
 
 	addStudent = (event, newStudent) => {
 		event.preventDefault();
-		console.log(event, newStudent)
+	//	console.log(event, newStudent)
 		postNewStudent(newStudent).then(
 			(response) => {
-				console.log(response)
+			//	console.log(response)
 				this.setState({students: [...this.state.students, response]})
 			}
 		)

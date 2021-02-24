@@ -21,7 +21,7 @@ const StudentCard = (props) => {
 					onClick={() => {
 						removeStudent(_id);
 					}}>
-					X
+					Remove Student From Course
 				</button>
 				<h2>{name}</h2>
 				<p>{_id}</p>

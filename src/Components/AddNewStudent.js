@@ -42,7 +42,7 @@ class AddNewStudent extends Component {
 						<label htmlFor='starting-cohort'  className="studentform__label">
 							Starting Cohort:
 							<input
-								type='text'
+								type='number'
 								className="studentform__input"
 								name='startingCohort'
 								id='starting-cohort'
